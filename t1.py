@@ -17,10 +17,18 @@ def prov (v,p):
     den = sum_prov (v,p)
     return num/den
 
-def transicion (v1,v2):
+def amplitud (v1,v2):
     v1n = v1 / norma **(1/2)    
     v2n = v2 / norma **(1/2)
     r = np.transpose(np.conjugate(v2n))
     o = np.dot(r*v1n)
     return o
-
+def probabilidad (v1,v2):
+    v1n = v1 / norma **(1/2)
+    v2n = v2 / norma **(1/2)
+    r = np.transpose(np.conjugate(v2n))
+    o = np.dot(r*v1n)
+    p =np.real(o)
+    i = np.imag (o)
+    tra2 = norma(p,i)
+    return tra2
